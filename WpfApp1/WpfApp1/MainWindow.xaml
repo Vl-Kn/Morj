@@ -1,0 +1,67 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Graphs" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Height="25" Grid.Row="0" Grid.ColumnSpan="2" Background="#FFFBFB90" >
+            <MenuItem Header="File">
+                <MenuItem Header="Input" ></MenuItem>
+                <MenuItem Header="Save" >
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="?" ></MenuItem>
+            <MenuItem Header="???" ></MenuItem>
+        </Menu>
+        
+            <Canvas  Name ="field" Background="Aqua" MouseLeftButtonDown="field_MouseLeftButtonDown" 
+                 Grid.Column="0"  Grid.Row="2"  Grid.RowSpan ="3">
+            <!--<Ellipse
+            Name="ell" Width="50" Height="50" Fill="#FF14B8DC"
+            MouseMove="ell_MouseMove"
+            MouseLeftButtonDown="ell_MouseLeftButtonDown"
+            MouseLeftButtonUp="ell_MouseLeftButtonUp" Canvas.Left="250" Canvas.Top="126" 
+            >
+            </Ellipse>-->
+        </Canvas>
+        <Grid Grid.Column="1" Grid.Row ="2">
+            <Grid.RowDefinitions>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <DataGrid  Grid.Row="0" Background="#FFFFF300"/>
+            <DataGrid  Grid.Row="1" Background="#FFE25C00"/>
+        </Grid>
+        <ToolBar Grid.Row="1" Grid.ColumnSpan="2" Background="#FFF1F1B9">
+            <RadioButton GroupName="r" Name="cursor"  IsChecked="True">
+                <Image Source="src/cursor.jpg"/>
+            </RadioButton>
+            <RadioButton GroupName="r" Name="vertex" ToolTip="vertex">
+                <Image Source="src/Vertex.jpg"/>
+            </RadioButton>
+            <RadioButton GroupName="r" Name="edge">
+                <Image Source="src/edge.jpg"/>
+            </RadioButton>
+            <RadioButton GroupName="r" Name="handle_move">
+                <Image Source="src/l_pr.jpg"/>
+            </RadioButton>
+            <RadioButton GroupName="r" Name="delete">
+                <Image Source="src/delete.jpg"/>
+            </RadioButton>
+        </ToolBar>
+    </Grid>
+</Window>
